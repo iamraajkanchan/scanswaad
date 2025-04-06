@@ -8,23 +8,18 @@
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { background-color: #1E1E2F; color: #FFFFFF; overflow-x: hidden; }
-    header { background: #1E1E2F; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    body { background: #f0f0f5; color: #333; }
+    header { background: #7D0A0A; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
     header img { height: 50px; }
-    nav a { margin-left: 1.5rem; color: #FFFFFF; text-decoration: none; font-weight: bold; transition: color 0.3s; }
-    nav a:hover { color: #8F3BFF; }
-    .login-btn { background: #8F3BFF; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.3s; }
-    .login-btn:hover { background: #4A90E2; }
-    .hero { padding: 6rem 2rem; text-align: center; background: linear-gradient(120deg, #8F3BFF, #4A90E2); }
-    .hero h1 { font-size: 3.5rem; color: #FFFFFF; margin-bottom: 1rem; }
-    .hero p { margin: 1rem 0; font-size: 1.2rem; color: #E0E0E0; }
-    .cta { background: #8F3BFF; color: white; padding: 1rem 2rem; border-radius: 8px; font-weight: bold; text-decoration: none; transition: background 0.3s; }
-    .cta:hover { background: #4A90E2; }
-    .section { padding: 4rem 2rem; text-align: center; }
-    .features, .pricing, .blog { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; }
-    .card { background: #252536; border: 1px solid #444455; padding: 2rem; border-radius: 12px; width: 300px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: transform 0.3s; }
-    .card:hover { transform: translateY(-5px); border-color: #8F3BFF; }
-    footer { margin-top: 4rem; background: #1E1E2F; color: #999999; text-align: center; padding: 1rem; }
+    nav a { margin-left: 1.5rem; color: #EEEEEE; text-decoration: none; font-weight: bold; }
+    .login-btn { background: #BF3131; color: #EEEEEE; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer; }
+    .logout-btn { background: #BF3131; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer; }
+    .hero { padding: 3rem 2rem; text-align: center; background: #EAD196; }
+    .hero h1 { font-size: 2.5rem; color: #7D0A0A; }
+    .hero p { margin: 1rem 0; font-size: 1.2rem; }
+    .cta { background: #7D0A0A; color: white; padding: 1rem 2rem; text-decoration: none; font-weight: bold; border-radius: 8px; display: inline-block; margin-top: 1rem; }
+    .section { padding: 3rem 2rem; text-align: center; }
+    footer { margin-top: 4rem; background: #333; color: #fff; text-align: center; padding: 1rem; }
   </style>
 </head>
 <body>
@@ -38,7 +33,7 @@
       <a href="#blog">Blog</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button class="login-btn">Login / Signup</button>
+    <button id="auth-btn" class="login-btn">Login / Signup</button>
   </header>
 
   <section class="hero" id="home">
@@ -46,35 +41,6 @@
     <p>Digitize your restaurant menu with a QR code in minutes.</p>
     <a class="cta" href="#">Get Started</a>
   </section>
-
-<!-- Enhanced Home Description Section -->
-<section class="home-description" id="about" style="background: #252536; padding: 4rem 2rem;">
-    <div style="max-width: 1200px; margin: auto; text-align: center;">
-        <h2 style="font-size: 2.8rem; color: #8F3BFF; margin-bottom: 1.5rem;">Why Choose ScanSwaad?</h2>
-        <p style="font-size: 1.1rem; line-height: 1.8; color: #E0E0E0; margin-bottom: 2rem;">
-            Experience the simplest and fastest way to manage your restaurant menu. ScanSwaad offers an effortless, user-friendly platform where restaurant owners can seamlessly create dynamic QR codes for their tables, add or remove menu items at their convenience, and offer a touch-free ordering experience to their customers.
-        </p>
-        
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 2rem;">
-            <div class="card">
-                <h3 style="color: #8F3BFF;">💡 Dynamic QR Codes</h3>
-                <p>Generate unique QR codes for each table with ease and update menus instantly.</p>
-            </div>
-            <div class="card">
-                <h3 style="color: #8F3BFF;">📝 Customizable Menu</h3>
-                <p>Easily add, remove, or update menu items anytime from your dashboard.</p>
-            </div>
-            <div class="card">
-                <h3 style="color: #8F3BFF;">📱 NFC Compatibility</h3>
-                <p>Allow NFC-enabled mobiles to tap and access the menu instantly without scanning.</p>
-            </div>
-            <div class="card">
-                <h3 style="color: #8F3BFF;">📊 Enhanced Customer Experience</h3>
-                <p>Deliver a smooth and contactless dining experience that impresses your guests.</p>
-            </div>
-        </div>
-    </div>
-</section>
 
   <section class="section" id="features">
     <h2>Features</h2>
@@ -108,5 +74,48 @@
 
   <footer>© 2025 ScanSwaad. All rights reserved.</footer>
 
+  <!-- Login/Signup Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle">Login</h2>
+      
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Username" />
+        <input type="password" id="password" placeholder="Password" />
+        <div id="login-error-message"></div>
+        <button type="submit">Login</button>
+      </form>
+      
+      <form id="signup-form">
+        <input type="text" id="first-name" placeholder="First Name" />
+        <input type="text" id="last-name" placeholder="Last Name" />
+        <input type="text" id="signup-username" placeholder="Username" />
+        <input type="password" id="signup-password" placeholder="Password" />
+        <div id="signup-error-message"></div>
+        <div id="signup-success-message"></div>
+        <button type="submit">Sign Up</button>
+      </form>
+      
+      <div>
+        <a id="switch-link" onclick="switchAuthMode()">Switch Mode</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const loginModal = document.getElementById('loginModal');
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+    const authBtn = document.getElementById('auth-btn');
+
+    authBtn.onclick = () => loginModal.style.display = 'block';
+
+    window.onclick = function(event) {
+      if (event.target === loginModal) {
+        loginModal.style.display = 'none';
+      }
+    };
+  </script>
 </body>
 </html>
