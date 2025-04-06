@@ -8,23 +8,23 @@
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { background: #F0F3F4; color: #343A40; overflow-x: hidden; }
-    header { background: #1E3D59; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    body { background: #F5F5F5; color: #212121; overflow-x: hidden; }
+    header { background: #0044CC; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
     header img { height: 50px; }
-    nav a { margin-left: 1.5rem; color: #F5B041; text-decoration: none; font-weight: bold; transition: color 0.3s; }
-    nav a:hover { color: #FF6F61; }
+    nav a { margin-left: 1.5rem; color: #FFFFFF; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+    nav a:hover { color: #FFC107; }
     .login-btn { background: #FF6F61; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.3s; }
-    .login-btn:hover { background: #FF897C; }
-    .hero { padding: 4rem 2rem; text-align: center; background: linear-gradient(180deg, #F5B041, #F0F3F4); }
-    .hero h1 { font-size: 3rem; color: #1E3D59; margin-bottom: 1rem; }
-    .hero p { margin: 1rem 0; font-size: 1.2rem; color: #4A4A4A; }
+    .login-btn:hover { background: #FF8A80; }
+    .hero { padding: 4rem 2rem; text-align: center; background: linear-gradient(180deg, #0044CC, #F5F5F5); }
+    .hero h1 { font-size: 3rem; color: white; margin-bottom: 1rem; }
+    .hero p { margin: 1rem 0; font-size: 1.2rem; color: white; }
     .cta { background: #FF6F61; color: white; padding: 1rem 2rem; border-radius: 8px; font-weight: bold; text-decoration: none; transition: background 0.3s; }
-    .cta:hover { background: #FF897C; }
+    .cta:hover { background: #FF8A80; }
     .section { padding: 3rem 2rem; text-align: center; }
     .features, .pricing, .blog { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; }
     .card { background: white; border: 1px solid #ddd; padding: 2rem; border-radius: 12px; width: 300px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
     .card:hover { transform: translateY(-5px); border-color: #FF6F61; }
-    footer { margin-top: 4rem; background: #1E3D59; color: white; text-align: center; padding: 1rem; }
+    footer { margin-top: 4rem; background: #0044CC; color: white; text-align: center; padding: 1rem; }
   </style>
 </head>
 <body>
@@ -48,18 +48,30 @@
   </section>
 
 <!-- Enhanced Home Description Section -->
-<section class="home-description" id="about" style="background: linear-gradient(180deg, #FF6F61, #F0F3F4); padding: 5rem 2rem;">
+<section class="home-description" id="about" style="background: #FFF3E0; padding: 5rem 2rem;">
     <div style="max-width: 1200px; margin: auto; text-align: center;">
-        <h2 style="font-size: 2.8rem; color: #1E3D59; margin-bottom: 1.5rem;">Why Choose ScanSwaad?</h2>
-        <p style="font-size: 1.2rem; line-height: 1.8; color: #343A40; max-width: 800px; margin: auto; margin-bottom: 3rem;">
+        <h2 style="font-size: 2.8rem; color: #0044CC; margin-bottom: 1.5rem;">Why Choose ScanSwaad?</h2>
+        <p style="font-size: 1.2rem; line-height: 1.8; color: #212121; max-width: 800px; margin: auto; margin-bottom: 3rem;">
             Experience a seamless and efficient way to manage your restaurant menu with ScanSwaad. Empower your restaurant with a <strong>user-friendly platform</strong> that lets you effortlessly create dynamic QR codes, update menus, and provide a touch-free ordering experience.
         </p>
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-            <div class="card"><h3>💡 Dynamic QR Codes</h3><p>Generate unique QR codes for each table and update your menus instantly.</p></div>
-            <div class="card"><h3>📝 Customizable Menu</h3><p>Easily add, remove, or update menu items anytime from your dashboard.</p></div>
-            <div class="card"><h3>📱 NFC Compatibility</h3><p>Allow NFC-enabled mobiles to tap and access menus instantly without scanning.</p></div>
-            <div class="card"><h3>📊 Enhanced Experience</h3><p>Provide a smooth and contactless dining experience that delights your guests.</p></div>
+            <div class="card">
+                <h3>💡 Dynamic QR Codes</h3>
+                <p>Generate unique QR codes for each table and update your menus instantly.</p>
+            </div>
+            <div class="card">
+                <h3>📝 Customizable Menu</h3>
+                <p>Easily add, remove, or update menu items anytime from your dashboard.</p>
+            </div>
+            <div class="card">
+                <h3>📱 NFC Compatibility</h3>
+                <p>Allow NFC-enabled mobiles to tap and access menus instantly without scanning.</p>
+            </div>
+            <div class="card">
+                <h3>📊 Enhanced Customer Experience</h3>
+                <p>Provide a smooth and contactless dining experience that delights your guests.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -70,6 +82,21 @@
       <div class="card"><h3>QR Code Menu</h3><p>Generate a digital menu accessible by scanning a QR code.</p></div>
       <div class="card"><h3>Customizable Menu</h3><p>Edit your menu anytime from your dashboard.</p></div>
       <div class="card"><h3>One Year Validity</h3><p>Your QR code remains active for a full year.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <h2>Pricing</h2>
+    <div class="pricing">
+      <div class="card"><h3>Basic Plan</h3><p>₹999/year<br>1 QR Code<br>Editable Menu<br>Owner Profile</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="blog">
+    <h2>Blog</h2>
+    <div class="blog">
+      <div class="card"><h3>How QR Codes Are Changing Restaurants</h3><p>Transforming the dining experience.</p></div>
+      <div class="card"><h3>Top Trends in Digital Ordering</h3><p>The future of restaurant tech.</p></div>
     </div>
   </section>
 
