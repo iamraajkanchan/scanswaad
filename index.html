@@ -8,22 +8,25 @@
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { background: #1D1D2C; color: #EAEAEA; }
-    header { background: #2E2E48; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    body { background: #EEEEEE; color: #333; }
+    header { background: #7D0A0A; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
     header img { height: 50px; }
-    nav a { margin-left: 1.5rem; color: #EAEAEA; text-decoration: none; font-weight: bold; }
-    nav a:hover { color: #FFAA33; }
-    .login-btn { background: #FFAA33; color: #1D1D2C; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer; }
-    .logout-btn { background: #FF3333; color: white; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer; }
-    .hero { padding: 4rem 2rem; text-align: center; background: linear-gradient(135deg, #FFAA33, #FF3D5A); }
-    .hero h1 { font-size: 3rem; color: #FFFFFF; }
-    .hero p { margin: 1rem 0; font-size: 1.2rem; color: #DDDDDD; }
-    .cta { background: #FFAA33; color: #1D1D2C; padding: 1rem 2rem; text-decoration: none; font-weight: bold; border-radius: 8px; display: inline-block; margin-top: 1rem; }
-    .section { padding: 4rem 2rem; text-align: center; }
-    footer { margin-top: 4rem; background: #2E2E48; color: #EAEAEA; text-align: center; padding: 1rem; }
+    nav a { margin-left: 1.5rem; color: #fff; text-decoration: none; font-weight: bold; }
+    .login-btn { background: #BF3131; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer; }
+    .logout-btn { background: #BF3131; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer; }
+    .hero { padding: 3rem 2rem; text-align: center; background: #EAD196; }
+    .hero h1 { font-size: 3rem; color: #7D0A0A; }
+    .hero p { margin: 1rem 0; font-size: 1.2rem; color: #555; }
+    .cta { background: #BF3131; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; }
+    .section { padding: 3rem 2rem; text-align: center; }
     .features, .pricing, .blog { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; }
-    .card { background: #2E2E48; border: 1px solid #444455; padding: 2rem; border-radius: 12px; width: 300px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: transform 0.3s; }
-    .card:hover { transform: translateY(-5px); border-color: #FFAA33; }
+    .card { background: white; border: 1px solid #eee; padding: 2rem; border-radius: 12px; width: 250px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    footer { background: #333; color: white; text-align: center; padding: 1rem; }
+
+    /* Modal Styles */
+    .modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
+    .modal-content { background-color: white; margin: 15% auto; padding: 2rem; border-radius: 8px; width: 90%; max-width: 400px; }
+    .close-btn { float: right; font-size: 1.5rem; cursor: pointer; }
   </style>
 </head>
 <body>
@@ -46,59 +49,46 @@
     <a class="cta" href="#">Get Started</a>
   </section>
 
-  <!-- Enhanced Home Description Section -->
-  <section class="home-description" id="about" style="background: #252536; padding: 4rem 2rem;">
-      <div style="max-width: 1200px; margin: auto; text-align: center;">
-          <h2 style="font-size: 2.8rem; color: #FFAA33; margin-bottom: 1.5rem;">Why Choose ScanSwaad?</h2>
-          <p style="font-size: 1.1rem; line-height: 1.8; color: #EAEAEA; margin-bottom: 2rem;">
-              Experience the simplest and fastest way to manage your restaurant menu. ScanSwaad offers an effortless, user-friendly platform where restaurant owners can seamlessly create dynamic QR codes for their tables, add or remove menu items at their convenience, and offer a touch-free ordering experience to their customers.
-          </p>
-          
-          <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 2rem;">
-              <div class="card">
-                  <h3 style="color: #FFAA33;">💡 Dynamic QR Codes</h3>
-                  <p>Generate unique QR codes for each table with ease and update menus instantly.</p>
-              </div>
-              <div class="card">
-                  <h3 style="color: #FFAA33;">📝 Customizable Menu</h3>
-                  <p>Easily add, remove, or update menu items anytime from your dashboard.</p>
-              </div>
-              <div class="card">
-                  <h3 style="color: #FFAA33;">📱 NFC Compatibility</h3>
-                  <p>Allow NFC-enabled mobiles to tap and access the menu instantly without scanning.</p>
-              </div>
-              <div class="card">
-                  <h3 style="color: #FFAA33;">📊 Enhanced Customer Experience</h3>
-                  <p>Deliver a smooth and contactless dining experience that impresses your guests.</p>
-              </div>
-          </div>
-      </div>
+  <!-- Why Choose ScanSwaad Section -->
+  <section class="section" id="about">
+    <h2>Why Choose ScanSwaad?</h2>
+    <p>Experience a seamless and efficient way to manage your restaurant menu.</p>
+    <div class="features">
+      <div class="card">💡 Dynamic QR Codes - Generate unique QR codes for each table and update menus instantly.</div>
+      <div class="card">📝 Customizable Menu - Edit your menu anytime from your dashboard.</div>
+      <div class="card">📱 NFC Compatibility - Allow NFC-enabled mobiles to tap and access the menu instantly.</div>
+      <div class="card">📊 Enhanced Experience - Provide a smooth, contactless dining experience for your guests.</div>
+    </div>
   </section>
 
+  <!-- Features Section -->
   <section class="section" id="features">
     <h2>Features</h2>
     <div class="features">
-      <div class="card"><h3>QR Code Menu</h3><p>Generate a digital menu accessible by scanning a QR code.</p></div>
-      <div class="card"><h3>Customizable Menu</h3><p>Edit your menu anytime from your dashboard.</p></div>
-      <div class="card"><h3>One Year Validity</h3><p>Your QR code remains active for a full year.</p></div>
+      <div class="card">QR Code Menu - Generate digital menus accessible by scanning a QR code.</div>
+      <div class="card">Customizable Menu - Edit your menu anytime from your dashboard.</div>
+      <div class="card">One Year Validity - Your QR code remains active for a full year.</div>
     </div>
   </section>
 
+  <!-- Pricing Section -->
   <section class="section" id="pricing">
     <h2>Pricing</h2>
     <div class="pricing">
-      <div class="card"><h3>Basic Plan</h3><p>₹999/year<br>1 QR Code<br>Editable Menu<br>Owner Profile</p></div>
+      <div class="card">Basic Plan - ₹999/year, 1 QR Code, Editable Menu, Owner Profile</div>
     </div>
   </section>
 
+  <!-- Blog Section -->
   <section class="section" id="blog">
     <h2>Blog</h2>
     <div class="blog">
-      <div class="card"><h3>How QR Codes Are Changing Restaurants</h3><p>Transforming the dining experience.</p></div>
-      <div class="card"><h3>Top Trends in Digital Ordering</h3><p>The future of restaurant tech.</p></div>
+      <div class="card">How QR Codes Are Changing Restaurants - Transforming the dining experience.</div>
+      <div class="card">Top Trends in Digital Ordering - The future of restaurant tech.</div>
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section class="section" id="contact">
     <h2>Contact Us</h2>
     <p>Phone: 8591914211</p>
@@ -106,5 +96,30 @@
   </section>
 
   <footer>© 2025 ScanSwaad. All rights reserved.</footer>
+
+  <!-- Login/Signup Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2>Login / Signup</h2>
+      <button class="submit-btn" onclick="alert('Login Successful!')">Login</button>
+      <button class="submit-btn" onclick="alert('Signup Successful!')">Sign Up</button>
+    </div>
+  </div>
+
+  <script>
+    const loginModal = document.getElementById('loginModal');
+    const authBtn = document.getElementById('auth-btn');
+
+    function showLoginModal() {
+      loginModal.style.display = 'block';
+    }
+
+    function closeModal() {
+      loginModal.style.display = 'none';
+    }
+
+    authBtn.onclick = showLoginModal;
+  </script>
 </body>
 </html>
