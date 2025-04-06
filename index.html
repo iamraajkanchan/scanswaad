@@ -8,23 +8,23 @@
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { background: #f9f9f9; color: #333; overflow-x: hidden; }
-    header { background: #f7a000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    body { background: #F0F3F4; color: #343A40; overflow-x: hidden; }
+    header { background: #1E3D59; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
     header img { height: 50px; }
-    nav a { margin-left: 1.5rem; color: #fff; text-decoration: none; font-weight: bold; transition: color 0.3s; }
-    nav a:hover { color: #ffd166; }
-    .login-btn { background: white; color: #f7a000; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.3s; }
-    .login-btn:hover { background: #ffe2b3; }
-    .hero { padding: 4rem 2rem; text-align: center; background: linear-gradient(180deg, #fff3e6, #fff9f0); }
-    .hero h1 { font-size: 3rem; color: #f7a000; margin-bottom: 1rem; }
-    .hero p { margin: 1rem 0; font-size: 1.2rem; color: #555; }
-    .cta { background: #f7a000; color: white; padding: 1rem 2rem; border-radius: 8px; font-weight: bold; text-decoration: none; transition: background 0.3s; }
-    .cta:hover { background: #ffae42; }
+    nav a { margin-left: 1.5rem; color: #F5B041; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+    nav a:hover { color: #FF6F61; }
+    .login-btn { background: #FF6F61; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.3s; }
+    .login-btn:hover { background: #FF897C; }
+    .hero { padding: 4rem 2rem; text-align: center; background: linear-gradient(180deg, #F5B041, #F0F3F4); }
+    .hero h1 { font-size: 3rem; color: #1E3D59; margin-bottom: 1rem; }
+    .hero p { margin: 1rem 0; font-size: 1.2rem; color: #4A4A4A; }
+    .cta { background: #FF6F61; color: white; padding: 1rem 2rem; border-radius: 8px; font-weight: bold; text-decoration: none; transition: background 0.3s; }
+    .cta:hover { background: #FF897C; }
     .section { padding: 3rem 2rem; text-align: center; }
     .features, .pricing, .blog { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; }
-    .card { background: white; border: 1px solid #eee; padding: 2rem; border-radius: 12px; width: 300px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
-    .card:hover { transform: translateY(-5px); }
-    footer { margin-top: 4rem; background: #333; color: white; text-align: center; padding: 1rem; }
+    .card { background: white; border: 1px solid #ddd; padding: 2rem; border-radius: 12px; width: 300px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .card:hover { transform: translateY(-5px); border-color: #FF6F61; }
+    footer { margin-top: 4rem; background: #1E3D59; color: white; text-align: center; padding: 1rem; }
   </style>
 </head>
 <body>
@@ -48,30 +48,18 @@
   </section>
 
 <!-- Enhanced Home Description Section -->
-<section class="home-description" id="about" style="background: linear-gradient(180deg, #fff9f0, #fdf7e3); padding: 5rem 2rem;">
+<section class="home-description" id="about" style="background: linear-gradient(180deg, #FF6F61, #F0F3F4); padding: 5rem 2rem;">
     <div style="max-width: 1200px; margin: auto; text-align: center;">
-        <h2 style="font-size: 2.8rem; color: #f7a000; margin-bottom: 1.5rem;">Why Choose ScanSwaad?</h2>
-        <p style="font-size: 1.2rem; line-height: 1.8; color: #666; max-width: 800px; margin: auto; margin-bottom: 3rem;">
+        <h2 style="font-size: 2.8rem; color: #1E3D59; margin-bottom: 1.5rem;">Why Choose ScanSwaad?</h2>
+        <p style="font-size: 1.2rem; line-height: 1.8; color: #343A40; max-width: 800px; margin: auto; margin-bottom: 3rem;">
             Experience a seamless and efficient way to manage your restaurant menu with ScanSwaad. Empower your restaurant with a <strong>user-friendly platform</strong> that lets you effortlessly create dynamic QR codes, update menus, and provide a touch-free ordering experience.
         </p>
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-            <div class="card">
-                <h3>💡 Dynamic QR Codes</h3>
-                <p>Generate unique QR codes for each table and update your menus instantly.</p>
-            </div>
-            <div class="card">
-                <h3>📝 Customizable Menu</h3>
-                <p>Easily add, remove, or update menu items anytime from your dashboard.</p>
-            </div>
-            <div class="card">
-                <h3>📱 NFC Compatibility</h3>
-                <p>Allow NFC-enabled mobiles to tap and access menus instantly without scanning.</p>
-            </div>
-            <div class="card">
-                <h3>📊 Enhanced Customer Experience</h3>
-                <p>Provide a smooth and contactless dining experience that delights your guests.</p>
-            </div>
+            <div class="card"><h3>💡 Dynamic QR Codes</h3><p>Generate unique QR codes for each table and update your menus instantly.</p></div>
+            <div class="card"><h3>📝 Customizable Menu</h3><p>Easily add, remove, or update menu items anytime from your dashboard.</p></div>
+            <div class="card"><h3>📱 NFC Compatibility</h3><p>Allow NFC-enabled mobiles to tap and access menus instantly without scanning.</p></div>
+            <div class="card"><h3>📊 Enhanced Experience</h3><p>Provide a smooth and contactless dining experience that delights your guests.</p></div>
         </div>
     </div>
 </section>
@@ -83,27 +71,6 @@
       <div class="card"><h3>Customizable Menu</h3><p>Edit your menu anytime from your dashboard.</p></div>
       <div class="card"><h3>One Year Validity</h3><p>Your QR code remains active for a full year.</p></div>
     </div>
-  </section>
-
-  <section class="section" id="pricing">
-    <h2>Pricing</h2>
-    <div class="pricing">
-      <div class="card"><h3>Basic Plan</h3><p>₹999/year<br>1 QR Code<br>Editable Menu<br>Owner Profile</p></div>
-    </div>
-  </section>
-
-  <section class="section" id="blog">
-    <h2>Blog</h2>
-    <div class="blog">
-      <div class="card"><h3>How QR Codes Are Changing Restaurants</h3><p>Transforming the dining experience.</p></div>
-      <div class="card"><h3>Top Trends in Digital Ordering</h3><p>The future of restaurant tech.</p></div>
-    </div>
-  </section>
-
-  <section class="section" id="contact">
-    <h2>Contact Us</h2>
-    <p>Phone: 8591914211</p>
-    <p>Email: Coming Soon</p>
   </section>
 
   <footer>© 2025 ScanSwaad. All rights reserved.</footer>
