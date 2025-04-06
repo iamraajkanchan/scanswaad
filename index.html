@@ -7,106 +7,98 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { background: #fff9f0; color: #333; }
-    header { background: #f7a000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    header img { height: 50px; }
-    nav a { margin-left: 1.5rem; color: #fff; text-decoration: none; font-weight: bold; }
-    .login-btn { background: #fff; color: #f7a000; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer; }
-    .logout-btn { background: #ff3333; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer; }
-    .hero { padding: 3rem 2rem; text-align: center; }
-    .hero h1 { font-size: 2.5rem; color: #f7a000; }
-    .hero p { margin: 1rem 0; font-size: 1.2rem; }
-    .cta { background: #f7a000; color: #fff; padding: 1rem 2rem; text-decoration: none; font-weight: bold; border-radius: 8px; display: inline-block; margin-top: 1rem; }
-    .section { padding: 3rem 2rem; text-align: center; }
-    footer { margin-top: 4rem; background: #333; color: #fff; text-align: center; padding: 1rem; }
-    .features, .pricing, .blog { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; }
-    .card { background: #fff; border: 1px solid #eee; padding: 2rem; border-radius: 12px; width: 250px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-    
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.5);
+    * {
+      margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;
     }
-    .modal-content {
-      background-color: #fff;
-      margin: 15% auto;
-      padding: 2rem;
-      border-radius: 8px;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    body {
+      background: #fff9f0; color: #333; overflow-x: hidden;
     }
-    .close-btn {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .close-btn:hover {
-      color: #333;
-    }
-    .form-group {
-      margin-bottom: 1rem;
-    }
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: bold;
-    }
-    .form-group input {
-      width: 100%;
-      padding: 0.75rem;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-    }
-    .submit-btn {
+    header {
       background: #f7a000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header img { height: 50px; }
+    nav a {
+      margin-left: 1.5rem;
       color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #333; }
+    .login-btn { 
+      background: #fff;
+      color: #f7a000;
       border: none;
-      padding: 0.75rem 1.5rem;
+      padding: 0.5rem 1rem;
       border-radius: 6px;
       font-weight: bold;
       cursor: pointer;
-      width: 100%;
-      margin-top: 1rem;
+      transition: background 0.3s;
     }
-    .error-message {
-      color: #ff3333;
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
+    .login-btn:hover {
+      background: #f7a000;
+      color: #fff;
     }
-    .success-message {
-      color: #28a745;
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-    }
-    .switch-mode {
+    .hero {
+      padding: 4rem 2rem;
       text-align: center;
-      margin-top: 1rem;
-      font-size: 0.9rem;
+      background: url('https://source.unsplash.com/1600x900/?restaurant,food') no-repeat center;
+      background-size: cover;
+      color: white;
     }
-    .switch-mode a {
-      color: #f7a000;
-      cursor: pointer;
-      text-decoration: none;
+    .hero h1 {
+      font-size: 3.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
-    .name-fields {
+    .hero p { 
+      margin: 1rem 0;
+      font-size: 1.3rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    .cta {
+      background: #f7a000;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .cta:hover { background: #ff8900; }
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .features, .pricing, .blog {
       display: flex;
-      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
     }
-    .name-fields .form-group {
-      flex: 1;
+    .card {
+      background: white;
+      border: 1px solid #eee;
+      padding: 2rem;
+      border-radius: 12px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    #signup-form {
-      display: none;
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
     }
   </style>
 </head>
@@ -121,49 +113,14 @@
       <a href="#blog">Blog</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button id="auth-btn" class="login-btn">Login / Signup</button>
+    <button class="login-btn" onclick="showLoginModal()">Login / Signup</button>
   </header>
 
   <section class="hero" id="home">
     <h1>Scan. Order. Enjoy.</h1>
-    <p>Digitize your restaurant menu with a QR code in minutes.</p>
+    <p>Your Restaurant's Digital Menu Solution</p>
     <a class="cta" href="#">Get Started</a>
   </section>
-
-<!-- Enhanced Home Description Section -->
-<section class="home-description" id="about" style="background: #fdf7e3; padding: 4rem 2rem; text-align: center;">
-    <div style="max-width: 1200px; margin: auto;">
-        <h2 style="font-size: 2.2rem; color: #f7a000; margin-bottom: 1rem;">Why Choose ScanSwaad?</h2>
-        <p style="font-size: 1.1rem; line-height: 1.6; color: #555; margin-bottom: 2rem;">
-            Experience the simplest and fastest way to manage your restaurant menu. ScanSwaad offers an effortless, user-friendly platform where restaurant owners can seamlessly create dynamic QR codes for their tables, add or remove menu items at their convenience, and offer a touch-free ordering experience to their customers.
-        </p>
-        
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 2rem;">
-            <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-                <h3 style="color: #f7a000; margin-bottom: 0.5rem;">💡 Dynamic QR Codes</h3>
-                <p style="color: #555;">Generate unique QR codes for each table with ease and update menus instantly.</p>
-            </div>
-            <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-                <h3 style="color: #f7a000; margin-bottom: 0.5rem;">📝 Customizable Menu</h3>
-                <p style="color: #555;">Easily add, remove, or update menu items anytime from your dashboard.</p>
-            </div>
-            <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-                <h3 style="color: #f7a000; margin-bottom: 0.5rem;">📱 NFC Compatibility</h3>
-                <p style="color: #555;">Allow NFC-enabled mobiles to tap and access the menu instantly without scanning.</p>
-            </div>
-            <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;">
-                <h3 style="color: #f7a000; margin-bottom: 0.5rem;">📊 Enhanced Customer Experience</h3>
-                <p style="color: #555;">Deliver a smooth and contactless dining experience that impresses your guests.</p>
-            </div>
-        </div>
-        
-        <p style="font-size: 1rem; margin-top: 2rem; color: #666;">
-            Effortlessly streamline your restaurant operations with ScanSwaad. Your menu management made simple and efficient.
-        </p>
-    </div>
-</section>
-
-
 
   <section class="section" id="features">
     <h2>Features</h2>
@@ -197,270 +154,5 @@
 
   <footer>© 2025 ScanSwaad. All rights reserved.</footer>
 
-  <!-- Login/Signup Modal -->
-  <div id="loginModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal()">&times;</span>
-      <h2 id="modalTitle">Login</h2>
-      
-      <!-- Login Form -->
-      <form id="login-form">
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" id="username" placeholder="Enter your username">
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Enter your password">
-        </div>
-        <div id="login-error-message" class="error-message"></div>
-        <button type="submit" class="submit-btn">Login</button>
-      </form>
-      
-      <!-- Signup Form -->
-      <form id="signup-form">
-        <div class="name-fields">
-          <div class="form-group">
-            <label for="first-name">First Name</label>
-            <input type="text" id="first-name" placeholder="Enter your first name">
-          </div>
-          <div class="form-group">
-            <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" placeholder="Enter your last name">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="signup-username">Username</label>
-          <input type="text" id="signup-username" placeholder="Choose a username">
-        </div>
-        <div class="form-group">
-          <label for="signup-password">Password</label>
-          <input type="password" id="signup-password" placeholder="Choose a password">
-        </div>
-        <div id="signup-error-message" class="error-message"></div>
-        <div id="signup-success-message" class="success-message"></div>
-        <button type="submit" class="submit-btn">Sign Up</button>
-      </form>
-      
-      <div class="switch-mode">
-        <span id="switch-text">Don't have an account?</span> 
-        <a id="switch-link" onclick="switchAuthMode()">Sign up</a>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Constants
-    const CREDENTIALS = {
-      USERNAME: "user123",
-      PASSWORD: "password123"
-    };
-
-    // DOM elements
-    const loginModal = document.getElementById('loginModal');
-    const loginForm = document.getElementById('login-form');
-    const signupForm = document.getElementById('signup-form');
-    const usernameInput = document.getElementById('username');
-    const passwordInput = document.getElementById('password');
-    const firstNameInput = document.getElementById('first-name');
-    const lastNameInput = document.getElementById('last-name');
-    const signupUsernameInput = document.getElementById('signup-username');
-    const signupPasswordInput = document.getElementById('signup-password');
-    const loginErrorMessage = document.getElementById('login-error-message');
-    const signupErrorMessage = document.getElementById('signup-error-message');
-    const signupSuccessMessage = document.getElementById('signup-success-message');
-    const modalTitle = document.getElementById('modalTitle');
-    const authBtn = document.getElementById('auth-btn');
-    const switchLink = document.getElementById('switch-link');
-    const switchText = document.getElementById('switch-text');
-
-    // User database (in a real app, this would be server-side)
-    let users = [
-      { firstName: "John", lastName: "Doe", username: "user123", password: "password123" }
-    ];
-
-    // Modal functions
-    function showLoginModal() {
-      loginModal.style.display = 'block';
-      resetForms();
-      showLoginForm();
-    }
-
-    function closeModal() {
-      loginModal.style.display = 'none';
-    }
-
-    function resetForms() {
-      // Clear all inputs
-      [usernameInput, passwordInput, firstNameInput, lastNameInput, signupUsernameInput, signupPasswordInput].forEach(input => {
-        input.value = '';
-      });
-      
-      // Clear messages
-      loginErrorMessage.textContent = '';
-      signupErrorMessage.textContent = '';
-      signupSuccessMessage.textContent = '';
-    }
-
-    function showLoginForm() {
-      loginForm.style.display = 'block';
-      signupForm.style.display = 'none';
-      modalTitle.textContent = 'Login';
-      switchText.textContent = "Don't have an account?";
-      switchLink.textContent = "Sign up";
-    }
-
-    function showSignupForm() {
-      loginForm.style.display = 'none';
-      signupForm.style.display = 'block';
-      modalTitle.textContent = 'Sign Up';
-      switchText.textContent = "Already have an account?";
-      switchLink.textContent = "Login";
-    }
-
-    function switchAuthMode() {
-      if (loginForm.style.display === 'none') {
-        showLoginForm();
-      } else {
-        showSignupForm();
-      }
-      resetForms();
-    }
-
-    // Update UI based on authentication status
-    function updateAuthUI(isLoggedIn) {
-      if (isLoggedIn) {
-        authBtn.textContent = "Logout";
-        authBtn.className = "logout-btn";
-        authBtn.onclick = handleLogout;
-      } else {
-        authBtn.textContent = "Login / Signup";
-        authBtn.className = "login-btn";
-        authBtn.onclick = showLoginModal;
-      }
-    }
-
-    // Logout function
-    function handleLogout() {
-      localStorage.removeItem("isLoggedIn");
-      localStorage.removeItem("currentUser");
-      updateAuthUI(false);
-      alert("You have been successfully logged out.");
-    }
-
-    // Handle login form submission
-    function handleLogin(event) {
-      event.preventDefault();
-      
-      const username = usernameInput.value.trim();
-      const password = passwordInput.value;
-
-      // Validate inputs
-      if (!username || !password) {
-        loginErrorMessage.textContent = "Please enter both username and password.";
-        return;
-      }
-
-      // Check credentials
-      const user = users.find(u => u.username === username && u.password === password);
-      
-      if (user) {
-        localStorage.setItem("isLoggedIn", "true");
-        localStorage.setItem("currentUser", JSON.stringify({
-          firstName: user.firstName,
-          lastName: user.lastName,
-          username: user.username
-        }));
-        closeModal();
-        updateAuthUI(true);
-        window.location.href = "dashboard.html";
-      } else {
-        loginErrorMessage.textContent = "Invalid username or password.";
-        passwordInput.value = '';
-        passwordInput.focus();
-      }
-    }
-
-    // Handle signup form submission
-    function handleSignup(event) {
-      event.preventDefault();
-      
-      const firstName = firstNameInput.value.trim();
-      const lastName = lastNameInput.value.trim();
-      const username = signupUsernameInput.value.trim();
-      const password = signupPasswordInput.value;
-
-      // Validate inputs
-      if (!firstName || !lastName || !username || !password) {
-        signupErrorMessage.textContent = "Please fill in all fields.";
-        return;
-      }
-
-      // Check if username already exists
-      const usernameExists = users.some(u => u.username === username);
-      if (usernameExists) {
-        signupErrorMessage.textContent = "Username already exists. Please choose another.";
-        return;
-      }
-
-      // Create new user
-      const newUser = {
-        firstName,
-        lastName,
-        username,
-        password
-      };
-      
-      // Add to users array (in a real app, this would be a server call)
-      users.push(newUser);
-      
-      // Show success message
-      signupErrorMessage.textContent = '';
-      signupSuccessMessage.textContent = "Account created successfully! You can now login.";
-      
-      // Clear form
-      firstNameInput.value = '';
-      lastNameInput.value = '';
-      signupUsernameInput.value = '';
-      signupPasswordInput.value = '';
-      
-      // Switch back to login form after 2 seconds
-      setTimeout(() => {
-        showLoginForm();
-      }, 2000);
-    }
-
-    // Check authentication status on page load
-    function checkAuthStatus() {
-      if (localStorage.getItem("isLoggedIn") === "true") {
-        updateAuthUI(true);
-      } else {
-        updateAuthUI(false);
-      }
-    }
-
-    // Event listeners
-    if (loginForm) {
-      loginForm.addEventListener('submit', handleLogin);
-    }
-    
-    if (signupForm) {
-      signupForm.addEventListener('submit', handleSignup);
-    }
-
-    // Close modal when clicking outside of it
-    window.onclick = function(event) {
-      if (event.target === loginModal) {
-        closeModal();
-      }
-    }
-
-    // Initialize on load
-    document.addEventListener('DOMContentLoaded', function() {
-      checkAuthStatus();
-      // Set initial click handler
-      authBtn.onclick = localStorage.getItem("isLoggedIn") === "true" ? handleLogout : showLoginModal;
-    });
-  </script>
 </body>
 </html>
