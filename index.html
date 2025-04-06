@@ -8,25 +8,27 @@
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { background: #EEEEEE; color: #333; }
-    header { background: #7D0A0A; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    body { background: #1E1E2F; color: #EEEEEE; }
+    header { background: #393E46; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
     header img { height: 50px; }
-    nav a { margin-left: 1.5rem; color: #fff; text-decoration: none; font-weight: bold; }
-    .login-btn { background: #BF3131; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer; }
-    .logout-btn { background: #BF3131; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer; }
-    .hero { padding: 3rem 2rem; text-align: center; background: #EAD196; }
-    .hero h1 { font-size: 3rem; color: #7D0A0A; }
-    .hero p { margin: 1rem 0; font-size: 1.2rem; color: #555; }
-    .cta { background: #BF3131; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; }
-    .section { padding: 3rem 2rem; text-align: center; }
+    nav a { margin-left: 1.5rem; color: #EEEEEE; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+    nav a:hover { color: #4ECCA3; }
+    .login-btn { background: #4ECCA3; color: #1E1E2F; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.3s; }
+    .login-btn:hover { background: #393E46; color: #EEEEEE; }
+    .hero { padding: 4rem 2rem; text-align: center; background: #393E46; }
+    .hero h1 { font-size: 3rem; color: #4ECCA3; }
+    .hero p { margin: 1rem 0; font-size: 1.2rem; }
+    .cta { background: #4ECCA3; color: #1E1E2F; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.3s; }
+    .cta:hover { background: #393E46; color: #EEEEEE; }
+    .section { padding: 3rem 2rem; text-align: center; background: #1E1E2F; }
     .features, .pricing, .blog { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; }
-    .card { background: white; border: 1px solid #eee; padding: 2rem; border-radius: 12px; width: 250px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-    footer { background: #333; color: white; text-align: center; padding: 1rem; }
+    .card { background: #393E46; border: 1px solid #4ECCA3; padding: 2rem; border-radius: 12px; width: 250px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    footer { background: #393E46; color: white; text-align: center; padding: 1rem; }
 
     /* Modal Styles */
-    .modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
-    .modal-content { background-color: white; margin: 15% auto; padding: 2rem; border-radius: 8px; width: 90%; max-width: 400px; }
-    .close-btn { float: right; font-size: 1.5rem; cursor: pointer; }
+    .modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); }
+    .modal-content { background: #393E46; margin: 15% auto; padding: 2rem; border-radius: 8px; width: 90%; max-width: 400px; color: #EEEEEE; }
+    .close-btn { float: right; font-size: 1.5rem; cursor: pointer; color: #4ECCA3; }
   </style>
 </head>
 <body>
@@ -49,46 +51,30 @@
     <a class="cta" href="#">Get Started</a>
   </section>
 
-  <!-- Why Choose ScanSwaad Section -->
-  <section class="section" id="about">
-    <h2>Why Choose ScanSwaad?</h2>
-    <p>Experience a seamless and efficient way to manage your restaurant menu.</p>
-    <div class="features">
-      <div class="card">💡 Dynamic QR Codes - Generate unique QR codes for each table and update menus instantly.</div>
-      <div class="card">📝 Customizable Menu - Edit your menu anytime from your dashboard.</div>
-      <div class="card">📱 NFC Compatibility - Allow NFC-enabled mobiles to tap and access the menu instantly.</div>
-      <div class="card">📊 Enhanced Experience - Provide a smooth, contactless dining experience for your guests.</div>
-    </div>
-  </section>
-
-  <!-- Features Section -->
   <section class="section" id="features">
     <h2>Features</h2>
     <div class="features">
-      <div class="card">QR Code Menu - Generate digital menus accessible by scanning a QR code.</div>
-      <div class="card">Customizable Menu - Edit your menu anytime from your dashboard.</div>
-      <div class="card">One Year Validity - Your QR code remains active for a full year.</div>
+      <div class="card"><h3>QR Code Menu</h3><p>Generate digital menus accessible by scanning a QR code.</p></div>
+      <div class="card"><h3>Customizable Menu</h3><p>Edit your menu anytime from your dashboard.</p></div>
+      <div class="card"><h3>One Year Validity</h3><p>Your QR code remains active for a full year.</p></div>
     </div>
   </section>
 
-  <!-- Pricing Section -->
   <section class="section" id="pricing">
     <h2>Pricing</h2>
     <div class="pricing">
-      <div class="card">Basic Plan - ₹999/year, 1 QR Code, Editable Menu, Owner Profile</div>
+      <div class="card"><h3>Basic Plan</h3><p>₹999/year<br>1 QR Code<br>Editable Menu<br>Owner Profile</p></div>
     </div>
   </section>
 
-  <!-- Blog Section -->
   <section class="section" id="blog">
     <h2>Blog</h2>
     <div class="blog">
-      <div class="card">How QR Codes Are Changing Restaurants - Transforming the dining experience.</div>
-      <div class="card">Top Trends in Digital Ordering - The future of restaurant tech.</div>
+      <div class="card"><h3>How QR Codes Are Changing Restaurants</h3><p>Transforming the dining experience.</p></div>
+      <div class="card"><h3>Top Trends in Digital Ordering</h3><p>The future of restaurant tech.</p></div>
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section class="section" id="contact">
     <h2>Contact Us</h2>
     <p>Phone: 8591914211</p>
@@ -102,8 +88,8 @@
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal()">&times;</span>
       <h2>Login / Signup</h2>
-      <button class="submit-btn" onclick="alert('Login Successful!')">Login</button>
-      <button class="submit-btn" onclick="alert('Signup Successful!')">Sign Up</button>
+      <button class="cta" onclick="alert('Login Successful!')">Login</button>
+      <button class="cta" onclick="alert('Signup Successful!')">Sign Up</button>
     </div>
   </div>
 
